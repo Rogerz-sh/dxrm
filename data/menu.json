@@ -1,0 +1,86 @@
+{
+  "header": [
+    {
+      "id": 1,
+      "name": "user",
+      "text": "人物",
+      "icon": "fa-user",
+      "target": "",
+      "item": []
+    },
+    {
+      "id": 2,
+      "name": "material",
+      "text": "材料",
+      "icon": "fa-cubes",
+      "target": "",
+      "item": []
+    },
+    {
+      "id": 3,
+      "name": "pill",
+      "text": "丹药",
+      "icon": "fa-leaf",
+      "target": "",
+      "item": []
+    },
+    {
+      "id": 4,
+      "name": "treasure",
+      "text": "法宝",
+      "icon": "fa-legal",
+      "target": "",
+      "item": []
+    },
+    {
+      "id": 5,
+      "name": "magic",
+      "text": "功法",
+      "icon": "fa-book",
+      "target": "",
+      "item": []
+    }
+  ],
+  "footer": [
+    {
+      "id": 6,
+      "name": "log",
+      "text": "日志",
+      "icon": "fa-file-text-o",
+      "target": "",
+      "item": []
+    },
+    {
+      "id": 7,
+      "name": "map",
+      "text": "地图",
+      "icon": "fa-picture-o",
+      "target": "",
+      "item": []
+    },
+    {
+      "id": 8,
+      "name": "pet",
+      "text": "灵宠",
+      "icon": "fa-paw",
+      "target": "",
+      "item": []
+    },
+    {
+      "id": 9,
+      "name": "relation",
+      "text": "仙缘",
+      "icon": "fa-share-alt",
+      "target": "",
+      "item": []
+    },
+    {
+      "id": 10,
+      "name": "system",
+      "text": "系统",
+      "icon": "fa-cog",
+      "target": "",
+      "item": []
+    }
+  ]
+}

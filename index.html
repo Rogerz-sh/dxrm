@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <title>大仙饶命啊——纯文字修仙手游</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/zepto.min.js"></script>
+    <script src="js/underscore.min.js"></script>
+    <script src="js/prototype.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+  </head>
+  <body>
+    <div class="container bg" ng-controller="mainCtrl">
+      <header>
+        <ul class="flex flex-row">
+          <li class="flex-item align-center opener" ng-if="menu.header.length>0" ng-repeat="item in menu.header track by $index" data-index="$index"><a class="btn btn-square"><i class="fa {{ item.icon }}"></i><span ng-bind="item.text"></span></a></li>
+          <!--li class="flex-item align-center opener" data-index="0"><a class="btn btn-square"><i class="fa fa-user"></i>人物</a></li>
+          <li class="flex-item align-center opener" data-index="1"><a class="btn btn-square"><i class="fa fa-cubes"></i>材料</a></li>
+          <li class="flex-item align-center opener" data-index="2"><a class="btn btn-square"><i class="fa fa-leaf"></i>丹药</a></li>
+          <li class="flex-item align-center opener" data-index="3"><a class="btn btn-square"><i class="fa fa-legal"></i>法宝</a></li>
+          <li class="flex-item align-center opener" data-index="4"><a class="btn btn-square"><i class="fa fa-book"></i>功法</a></li-->
+        </ul>
+      </header>
+      <div class="main">
+        <div class="panel">
+          <div class="panel-body border border-radius-5 border-width-2">
+            <div class="panel-close-btn" data-index="0"><i class="fa fa-times fa-2x"></i></div>
+            <div class="panel-content">
+              <div ng-view></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <ul class="flex flex-row">
+          <li class="flex-item align-center opener" ng-if="menu.footer.length>0" ng-repeat="item in menu.footer track by $index" data-index="$index"><a class="btn btn-square"><i class="fa {{ item.icon }}"></i><span ng-bind="item.text"></span></a></li>
+          <!--li class="flex-item align-center opener" data-index="5"><a class="btn btn-square"><i class="fa fa-file-text-o"></i>日志</a></li>
+          <li class="flex-item align-center opener" data-index="6"><a class="btn btn-square"><i class="fa fa-picture-o"></i>地图</a></li>
+          <li class="flex-item align-center opener" data-index="7"><a class="btn btn-square"><i class="fa fa-paw"></i>灵宠</a></li>
+          <li class="flex-item align-center opener" data-index="8"><a class="btn btn-square"><i class="fa fa-share-alt"></i>仙缘</a></li>
+          <li class="flex-item align-center opener" data-index="9"><a class="btn btn-square"><i class="fa fa-cog"></i>系统</a></li-->
+        </ul>
+      </footer>
+    </div>
+    <script src="js/operator.js"></script>
+  </body>
+</html>

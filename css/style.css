@@ -1,0 +1,57 @@
+/*元素样式*/
+html, body { height: 100%; }
+html * { margin: 0; padding: 0; box-sizing: border-box; -webkit-box-sizing: border-box; }
+body { font-size: 12px; font-family: "Consolas", "Courier New", "微软雅黑" }
+header { width: 100%; height: 30px; position: absolute; top: 10px; z-index: 9; }
+footer { width: 100%; height: 30px; position: absolute; bottom: 10px; z-index: 9; }
+ul {  }
+ul>li { list-style: none; }
+
+/*容器*/
+.container { height: 100%; width: 100%; }
+.main { width: 100%; height: 100%; position: absolute; }
+.panel { width: 100%; height: 100%; position: absolute; padding: 60px 20px; transform: scale(0); transition: transform .2s linear; }
+.panel.active { transform: scale(1); }
+.panel-body { width: 100%; height: 100%; position: relative; background-color: rgba(255, 255, 255, .7); }
+.panel-close-btn { position: absolute; top: -10px; right: -10px; display: table-cell; width: 30px; height: 30px; border-radius: 50%; background: #eee; border: 2px solid #ddd; text-align: center; color: #D82851; line-height: 2em; }
+
+/*背景*/
+.bg { background-image: url(../images/big-bg.jpg); background-repeat: no-repeat; background-size: cover; }
+.bg::after { content: ''; display: block; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.5); }
+
+/*排版*/
+.flex { display: flex; display: -webkit-flex; }
+.flex-row { flex-direction: row; -webkit-flex-direction: row; }
+.flex-col { flex-direction: column; -webkit-flex-direction: column; }
+.flex-item { flex: 1; -webkit-flex: 1; }
+header .flex-item.opened { margin-top: 10px; }
+footer .flex-item.opened { margin-top: -10px; }
+.flex-item.has-new>btn::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background-color: #D82851; position: absolute; top: 2px; right: 2px; }
+
+.padding-top-5 { padding-top: 5px; }
+.padding-top-10 { padding-top: 10px; }
+.padding-bottom-5 { padding-bottom: 5px; }
+.padding-bottom-10 { padding-bottom: 10px; }
+.padding-left-5 { padding-left: 5px; }
+.padding-left-10 { padding-left: 10px; }
+.padding-right-5 { padding-right: 5px; }
+.padding-right-10 { padding-right: 10px; }
+
+/*对齐方式*/
+.align-center { text-align: center; }
+
+/*边框*/
+.border { border: 1px solid #ddd; }
+.border-radius-5 { border-radius: 5px; }
+.border-split-child>* { border-right: 1px solid #ddd; }
+.border-split-child>*:last-child { border: none; }
+.border-width-2 { border-width: 2px; }
+
+/*按钮*/
+.btn { display: inline-block; border: 1px solid #ddd; border-radius: 5px; padding: 7px; background: #fff; position: relative; }
+.btn>i { color: #24B0E6; margin-right: 3px; }
+
+
+/*字体*/
+.font-size-20 { font-size: 2em; }
+.font-size-15 { font-size: 1.5em; }

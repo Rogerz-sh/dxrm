@@ -1,0 +1,19 @@
+CACHE MANIFEST
+#v0.0.1
+
+CACHE:
+index.html
+
+css/font-awesome.min.css
+css/style.css
+
+fonts/fontawesome-webfont.woff?v=4.1.0
+fonts/fontawesome-webfont.ttf?v=4.1.0
+
+js/zepto.min.js
+
+images/big-bg.jpg
+
+NETWORK:
+index.html
+css/style.css
