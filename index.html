@@ -2,8 +2,14 @@
 <html ng-app="app">
   <head>
     <title>大仙饶命啊——纯文字修仙手游</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-app-status-bar-style" content="white" />
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon-precomposed" href="images/icon.png" />
+    <link rel="apple-touch-startup-image" href="images/start_320x568.png" sizes="640x1136">
+    <base href="/mobile/dxrm/">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <script src="js/zepto.min.js"></script>
@@ -11,40 +17,59 @@
     <script src="js/prototype.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/angular-route.min.js"></script>
+    <script src="js/angular-touch.min.js"></script>
   </head>
   <body>
-    <div class="container bg" ng-controller="mainCtrl">
+    <div class="container fullfill hidden" ng-controller="mainCtrl">
       <header>
-        <ul class="flex flex-row">
-          <li class="flex-item align-center opener" ng-if="menu.header.length>0" ng-repeat="item in menu.header track by $index" data-index="$index"><a class="btn btn-square"><i class="fa {{ item.icon }}"></i><span ng-bind="item.text"></span></a></li>
-          <!--li class="flex-item align-center opener" data-index="0"><a class="btn btn-square"><i class="fa fa-user"></i>人物</a></li>
-          <li class="flex-item align-center opener" data-index="1"><a class="btn btn-square"><i class="fa fa-cubes"></i>材料</a></li>
-          <li class="flex-item align-center opener" data-index="2"><a class="btn btn-square"><i class="fa fa-leaf"></i>丹药</a></li>
-          <li class="flex-item align-center opener" data-index="3"><a class="btn btn-square"><i class="fa fa-legal"></i>法宝</a></li>
-          <li class="flex-item align-center opener" data-index="4"><a class="btn btn-square"><i class="fa fa-book"></i>功法</a></li-->
+        <ul class="flex flex-row" ng-if="menu.header.length>0">
+          <li class="flex-item align-center opener" ng-class="{'active': panel.showIdx==item.id}" ng-repeat="item in menu.header track by $index" data-index="$index"><div class="btn btn-square" ng-click="showPanel(item)"><i class="fa {{ item.icon }}"></i><span ng-bind="item.text"></span></div></li>
         </ul>
       </header>
-      <div class="main">
-        <div class="panel">
-          <div class="panel-body border border-radius-5 border-width-2">
-            <div class="panel-close-btn" data-index="0"><i class="fa fa-times fa-2x"></i></div>
-            <div class="panel-content">
-              <div ng-view></div>
+      <div class="main fullfill">
+        <div class="panel fullfill" ng-show="panel.show">
+          <div class="panel-body fullfill">
+            <div class="panel-close-btn" data-index="0"><i class="fa fa-times fa-2x" ng-click="hidePanel()"></i></div>
+            <div class="panel-content bg-dark border-radius-5 fullfill hidden" ng-view>
+              
             </div>
           </div>
         </div>
       </div>
       <footer>
-        <ul class="flex flex-row">
-          <li class="flex-item align-center opener" ng-if="menu.footer.length>0" ng-repeat="item in menu.footer track by $index" data-index="$index"><a class="btn btn-square"><i class="fa {{ item.icon }}"></i><span ng-bind="item.text"></span></a></li>
-          <!--li class="flex-item align-center opener" data-index="5"><a class="btn btn-square"><i class="fa fa-file-text-o"></i>日志</a></li>
-          <li class="flex-item align-center opener" data-index="6"><a class="btn btn-square"><i class="fa fa-picture-o"></i>地图</a></li>
-          <li class="flex-item align-center opener" data-index="7"><a class="btn btn-square"><i class="fa fa-paw"></i>灵宠</a></li>
-          <li class="flex-item align-center opener" data-index="8"><a class="btn btn-square"><i class="fa fa-share-alt"></i>仙缘</a></li>
-          <li class="flex-item align-center opener" data-index="9"><a class="btn btn-square"><i class="fa fa-cog"></i>系统</a></li-->
+        <ul class="flex flex-row" ng-if="menu.footer.length>0">
+          <li class="flex-item align-center opener" ng-class="{'active': panel.showIdx==item.id}" ng-repeat="item in menu.footer track by $index" data-index="$index"><div class="btn btn-square" ng-click="showPanel(item)"><i class="fa {{ item.icon }}"></i><span ng-bind="item.text"></span></div></li>
         </ul>
       </footer>
     </div>
+    <div class="container-battle fullfill" ng-controller="battleCtrl">
+      
+    </div>
     <script src="js/operator.js"></script>
+    <script>
+      $(function () {
+        $(document).on('touchmove', function (e) {
+          var isScroll = $(e.target).hasClass('.scroll') || $(e.target).parents('.scroll').length > 0
+          if (isScroll) {
+
+          } else {
+            e.preventDefault();
+          }
+        }, false);
+        /*$('body').on('touchmove', function (e) {
+          var len = $('.panel-content').parents('.scroll').length;
+          if (len < 1) {
+            e.stopPropagation();
+          } else {
+            e.preventDefault();            
+          }
+        })*/
+        //要求从主屏幕打开应用
+        /*if (!navigator.standalone) {
+          $('body').children().hide();
+          alert('请将页面添加至主屏幕后从主屏幕打开！')
+        }*/
+      });
+    </script>
   </body>
 </html>

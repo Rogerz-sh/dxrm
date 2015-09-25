@@ -11,6 +11,9 @@ fonts/fontawesome-webfont.woff?v=4.1.0
 fonts/fontawesome-webfont.ttf?v=4.1.0
 
 js/zepto.min.js
+js/underscore.min.js
+js/angular.min.js
+js/angular-route.min.js
 
 images/big-bg.jpg
 
